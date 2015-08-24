@@ -31,6 +31,8 @@ public class Sample1 extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		PrintWriter out=response.getWriter();
+				out.println("Time AutoRefresh");
 		Calendar calendar=new GregorianCalendar();
 		int hour=calendar.get(Calendar.HOUR);
 		int min=calendar.get(Calendar.MINUTE);
@@ -40,7 +42,7 @@ public class Sample1 extends HttpServlet {
 			am_pm="AM";
 		else am_pm="PM";
 		String C=hour+":"+min+":"+sec+":"+am_pm;
-		PrintWriter out=response.getWriter();
+		
 		out.println("<html><body>"
 				+ "Current Time:"+C+"</body></html>");
 		
