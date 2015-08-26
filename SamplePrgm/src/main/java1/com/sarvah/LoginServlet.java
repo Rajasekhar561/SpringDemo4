@@ -2,9 +2,7 @@ package com.sarvah;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.logging.Logger;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -38,6 +36,8 @@ public class LoginServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		final org.apache.log4j.Logger logger = org.apache.log4j.Logger.getLogger(LoginServlet.class);
+		PrintWriter out=response.getWriter();
+		out.print("Login Page");
 		String Username=request.getParameter("userName");
 		request.setAttribute(Username, "Message");
 		String Password=request.getParameter("password");
